@@ -4,21 +4,26 @@
   var NS = 'http://www.w3.org/2000/svg';
   var INK = '#24324d', RED = '#c8313e';
 
-  /* ---------- Бусел (SVG) ---------- */
+  /* ---------- Бобр (SVG) ---------- */
   var EMO_NAMES = { hi: 'Привет', joy: 'Радость', wow: 'Удивление', think: 'Думает', sad: 'Грустит', wink: 'Подмигивает', cheer: 'Праздник' };
 
+  var BR = '#9b6a3c', BELLY = '#e6c79a', DK = '#5b3a1e';
   var STATIC =
-    '<g stroke="' + RED + '" stroke-width="5" stroke-linecap="round" fill="none">' +
-    '<path d="M88 206 L86 236 M86 236 L74 238 M112 206 L114 236 M114 236 L126 238"/></g>' +
-    '<ellipse cx="100" cy="158" rx="46" ry="54" fill="#fff" stroke="' + INK + '" stroke-width="3"/>' +
-    '<g class="wL"><path d="M64 128 Q16 150 34 206 Q62 188 72 158 Z" fill="#fff" stroke="' + INK + '" stroke-width="3" stroke-linejoin="round"/>' +
-    '<path d="M42 190 Q35 198 34 206 Q60 190 68 168 Q56 184 42 190Z" fill="' + INK + '"/></g>' +
-    '<g class="wR"><g transform="translate(200 0) scale(-1 1)"><path d="M64 128 Q16 150 34 206 Q62 188 72 158 Z" fill="#fff" stroke="' + INK + '" stroke-width="3" stroke-linejoin="round"/>' +
-    '<path d="M42 190 Q35 198 34 206 Q60 190 68 168 Q56 184 42 190Z" fill="' + INK + '"/></g></g>' +
+    '<g transform="rotate(-28 150 214)"><ellipse cx="160" cy="216" rx="32" ry="13" fill="' + DK + '" stroke="' + INK + '" stroke-width="3"/>' +
+    '<path d="M140 216 H182 M150 209 V223 M162 208 V224 M174 209 V223" stroke="#8a6338" stroke-width="2"/></g>' +
+    '<ellipse cx="80" cy="236" rx="17" ry="7" fill="' + DK + '" stroke="' + INK + '" stroke-width="3"/>' +
+    '<ellipse cx="120" cy="236" rx="17" ry="7" fill="' + DK + '" stroke="' + INK + '" stroke-width="3"/>' +
+    '<ellipse cx="100" cy="158" rx="46" ry="54" fill="' + BR + '" stroke="' + INK + '" stroke-width="3"/>' +
+    '<ellipse cx="100" cy="170" rx="28" ry="36" fill="' + BELLY + '"/>' +
+    '<g class="wL"><path d="M68 128 Q38 150 44 188 Q64 194 72 172 Q80 150 76 134 Z" fill="' + BR + '" stroke="' + INK + '" stroke-width="3" stroke-linejoin="round"/>' +
+    '<ellipse cx="55" cy="188" rx="10" ry="7" fill="' + DK + '"/></g>' +
+    '<g class="wR"><g transform="translate(200 0) scale(-1 1)"><path d="M68 128 Q38 150 44 188 Q64 194 72 172 Q80 150 76 134 Z" fill="' + BR + '" stroke="' + INK + '" stroke-width="3" stroke-linejoin="round"/>' +
+    '<ellipse cx="55" cy="188" rx="10" ry="7" fill="' + DK + '"/></g></g>' +
     '<rect x="64" y="106" width="72" height="16" rx="8" fill="' + RED + '"/>' +
     '<g fill="#fff"><path d="M80 114 l5 -5 l5 5 l-5 5z"/><path d="M97.500 114 l5 -5 l5 5 l-5 5z"/><path d="M115 114 l5 -5 l5 5 l-5 5z"/></g>' +
-    '<circle cx="100" cy="76" r="37" fill="#fff" stroke="' + INK + '" stroke-width="3"/>' +
-    '<path d="M92 41 Q96 30 102 40 Q108 31 110 43" fill="none" stroke="' + INK + '" stroke-width="3" stroke-linecap="round"/>';
+    '<circle cx="70" cy="46" r="13" fill="' + BR + '" stroke="' + INK + '" stroke-width="3"/><circle cx="70" cy="47" r="6" fill="#e9a3a3"/>' +
+    '<circle cx="130" cy="46" r="13" fill="' + BR + '" stroke="' + INK + '" stroke-width="3"/><circle cx="130" cy="47" r="6" fill="#e9a3a3"/>' +
+    '<circle cx="100" cy="76" r="37" fill="' + BR + '" stroke="' + INK + '" stroke-width="3"/>';
 
   function eye(type, cx, side) {
     var cy = 76, s = 'stroke="' + INK + '" stroke-width="4" stroke-linecap="round" fill="none"';
@@ -33,14 +38,15 @@
     return '<path d="M' + x1 + ' ' + y1 + ' L' + x2 + ' ' + y2 + '" stroke="' + INK + '" stroke-width="3.500" stroke-linecap="round"/>';
   }
   var CHEEK = '<circle cx="68" cy="92" r="7" fill="#ff9fb0" opacity=".7"/><circle cx="132" cy="92" r="7" fill="#ff9fb0" opacity=".7"/>';
+  var TEETH = '<rect x="92" y="101" width="16" height="15" rx="3" fill="#fff" stroke="' + INK + '" stroke-width="2.500"/><path d="M100 101 V116" stroke="' + INK + '" stroke-width="2"/>';
   var MOUTH = {
-    smile: '<path d="M91 101 Q100 110 109 101" fill="none" stroke="' + INK + '" stroke-width="3" stroke-linecap="round"/>',
-    open: '<path d="M91 99 Q100 118 109 99 Z" fill="#7a1620" stroke="' + INK + '" stroke-width="2.500" stroke-linejoin="round"/>',
-    o: '<ellipse cx="100" cy="106" rx="6" ry="8" fill="#7a1620" stroke="' + INK + '" stroke-width="2.500"/>',
-    flat: '<path d="M93 104 L106 102" stroke="' + INK + '" stroke-width="3" stroke-linecap="round"/>',
-    frown: '<path d="M92 108 Q100 98 108 108" fill="none" stroke="' + INK + '" stroke-width="3" stroke-linecap="round"/>'
+    smile: '<path d="M88 98 Q100 108 112 98" fill="none" stroke="' + INK + '" stroke-width="3" stroke-linecap="round"/>' + TEETH,
+    open: '<path d="M88 97 Q100 126 112 97 Z" fill="#7a1620" stroke="' + INK + '" stroke-width="2.500" stroke-linejoin="round"/>' + TEETH,
+    o: '<ellipse cx="100" cy="110" rx="9" ry="10" fill="#7a1620" stroke="' + INK + '" stroke-width="2.500"/>' + TEETH,
+    flat: '<path d="M90 100 L110 99" stroke="' + INK + '" stroke-width="3" stroke-linecap="round"/>' + TEETH,
+    frown: '<path d="M89 109 Q100 97 111 109" fill="none" stroke="' + INK + '" stroke-width="3" stroke-linecap="round"/>' + TEETH
   };
-  var BEAK = '<path d="M85 92 Q100 85 115 92 L104 134 Q100 139 96 134 Z" fill="' + RED + '" stroke="#8c1f29" stroke-width="2.500" stroke-linejoin="round"/>';
+  var BEAK = '<ellipse cx="100" cy="97" rx="23" ry="16" fill="' + BELLY + '"/><ellipse cx="100" cy="86" rx="8" ry="5.500" fill="#3b2412"/>';
   var CONF = '';
   [[30, 40, '#ffd166'], [170, 50, '#1f8a4c'], [20, 100, '#c8313e'], [180, 110, '#8fd3f4'], [50, 14, '#c8313e'], [150, 16, '#ffd166']].forEach(function (c) {
     CONF += '<rect x="' + c[0] + '" y="' + c[1] + '" width="9" height="9" rx="2" fill="' + c[2] + '" transform="rotate(' + (c[0] * 3) + ' ' + c[0] + ' ' + c[1] + ')"/>';
@@ -62,12 +68,12 @@
     cheer: function () { return CHEEK + eye('star', 84) + eye('star', 116) + BEAK + MOUTH.open + EXTRA.cheer; }
   };
 
-  function mkStork(emo) {
+  function mkBeaver(emo) {
     var svg = document.createElementNS(NS, 'svg');
     svg.setAttribute('viewBox', '0 0 200 245');
-    svg.setAttribute('class', 'stork');
+    svg.setAttribute('class', 'beaver');
     svg.setAttribute('role', 'img');
-    svg.setAttribute('aria-label', 'Бусел-путеводитель');
+    svg.setAttribute('aria-label', 'Бобр-путеводитель');
     svg.innerHTML = STATIC + '<g class="face"></g>';
     setEmo(svg, emo || 'hi');
     return svg;
@@ -78,13 +84,13 @@
     svg.querySelector('.face').innerHTML = FACE[emo]();
   }
 
-  var heroStork = mkStork('hi'); $('#heroGuide').appendChild(heroStork);
-  var guideStork = mkStork('hi'); $('#guideBtn').appendChild(guideStork);
+  var heroBeaver = mkBeaver('hi'); $('#heroGuide').appendChild(heroBeaver);
+  var guideBeaver = mkBeaver('hi'); $('#guideBtn').appendChild(guideBeaver);
   var bubble = $('#bubble');
   var sayTimer;
   function say(text, emo) {
     if (text) { bubble.textContent = text; bubble.style.animation = 'none'; void bubble.offsetWidth; bubble.style.animation = ''; }
-    if (emo) { setEmo(guideStork, emo); setEmo(heroStork, emo); }
+    if (emo) { setEmo(guideBeaver, emo); setEmo(heroBeaver, emo); }
   }
 
   /* legend of emotions */
@@ -92,13 +98,13 @@
   Object.keys(EMO_NAMES).forEach(function (k) {
     var b = document.createElement('button');
     b.type = 'button'; b.className = 'emo';
-    b.appendChild(mkStork(k));
+    b.appendChild(mkBeaver(k));
     var sp = document.createElement('span'); sp.textContent = EMO_NAMES[k]; b.appendChild(sp);
     b.onclick = function () { say(PHRASES[k], k); };
     emos.appendChild(b);
   });
   var PHRASES = {
-    hi: 'Привет! Я — Бусел, твой проводник!', joy: 'Ура, у нас всё получается!', wow: 'Ого! Вот это новость!',
+    hi: 'Привет! Я — Бобр, твой проводник!', joy: 'Ура, у нас всё получается!', wow: 'Ого! Вот это новость!',
     think: 'Хм… Давай подумаем вместе.', sad: 'Ошибся? Не страшно — попробуем ещё раз!',
     wink: 'Подскажу секрет: смотри на карту!', cheer: 'Праздник! Ты молодец!'
   };
@@ -118,8 +124,8 @@
     { icon: '🏙️', short: 'Мой родной край', title: 'Мой родной город и край', emo: 'wow',
       desc: 'Остановка о малой родине: улица, город или деревня, достопримечательности, люди труда. Учитель добавляет материал о своём регионе.',
       subs: [
-        { n: 'Виртуальная прогулка', t: 'И', tool: 'видео, фото', d: 'Видеопрогулка по родному краю с вопросами Бусла.' },
-        { n: 'Угадай по признакам', t: 'П', tool: 'PowerPoint', d: 'Игра: Бусел описывает место, дети отгадывают.' },
+        { n: 'Виртуальная прогулка', t: 'И', tool: 'видео, фото', d: 'Видеопрогулка по родному краю с вопросами Бобра.' },
+        { n: 'Угадай по признакам', t: 'П', tool: 'PowerPoint', d: 'Игра: Бобр описывает место, дети отгадывают.' },
         { n: 'Проект «Родной город»', t: 'Проект', tool: 'Canva / Padlet', d: 'Рассказ-презентация о любимом месте.' }] },
     { icon: '🚩', short: 'Символы страны', title: 'Государственные символы Беларуси', emo: 'cheer',
       desc: 'Герб, флаг, гимн. Ребёнок узнаёт их, понимает значение и учится относиться с уважением.',
@@ -151,7 +157,7 @@
         { n: 'Разбираем ситуации', t: 'П', tool: 'ветвящиеся сюжеты', d: 'Что сделать, если… Выбор поступка и его последствия.' },
         { n: 'Моё доброе дело', t: 'Проект', tool: 'Padlet', d: 'Дети публикуют фото и рассказ о добром деле.' },
         { n: 'Да — Нет', t: 'П', tool: 'Wayground', d: 'Быстрая викторина «верно / неверно».' }] },
-    { icon: '🎒', short: 'Копилка Бусла', title: 'Копилка Бусла: словарик, игры, проверь себя', emo: 'joy',
+    { icon: '🎒', short: 'Копилка Бобра', title: 'Копилка Бобра: словарик, игры, проверь себя', emo: 'joy',
       desc: 'Сводная остановка. Тут всё собрано: обществоведческий словарик, кроссворды, итоговый тест и страница «Для взрослых».',
       subs: [
         { n: 'Словарик понятий', t: 'И', tool: 'Genially', d: 'Слово, картинка и простое объяснение.' },
@@ -220,7 +226,7 @@
     m.subs.forEach(function (s, k) {
       h += '<li><button class="subbtn" type="button" data-k="' + k + '"><span class="tag ' + TCLS[s.t] + '">' + TNAME[s.t] + '</span>' + s.n + '</button></li>';
     });
-    h += '</ul><div class="detail" id="detail">Выбери любой пункт — Бусел расскажет, что там происходит.</div>' +
+    h += '</ul><div class="detail" id="detail">Выбери любой пункт — Бобр расскажет, что там происходит.</div>' +
       '<button class="btn small done-btn" type="button" id="doneBtn">' + (done[i] ? '⭐ Остановка пройдена' : 'Отметить остановку пройденной') + '</button>';
     panel.innerHTML = h;
     panel.style.borderLeftColor = COLORS[i];
@@ -246,7 +252,7 @@
 
   /* дерево сайта */
   var th = '<ul><li><b>🏠 Главная</b> — герой-путеводитель, начало пути<ul>' +
-    '<li>📋 Паспорт курса (аудитория, цели, результаты)</li><li>🎨 Концепция (стиль, Бусел, условные обозначения)</li>' +
+    '<li>📋 Паспорт курса (аудитория, цели, результаты)</li><li>🎨 Концепция (стиль, Бобр, условные обозначения)</li>' +
     '<li>🗺️ Карта курса<ul>';
   MODS.forEach(function (m, i) {
     th += '<li>' + m.icon + ' ' + (i + 1) + '. ' + m.short + '<ul>';
@@ -276,7 +282,7 @@
   var R1 = [
     { w: ['Герб', 'Флаг', 'Гимн', 'Самокат'], o: 3, why: 'Герб, флаг и гимн — государственные символы.' },
     { w: ['Минск', 'Гродно', 'Брест', 'Варшава'], o: 3, why: 'Варшава — столица Польши, остальные — города Беларуси.' },
-    { w: ['Бусел', 'Зубр', 'Лось', 'Пингвин'], o: 3, why: 'Пингвин не живёт в лесах Беларуси.' }
+    { w: ['Бобр', 'Зубр', 'Лось', 'Пингвин'], o: 3, why: 'Пингвин не живёт в лесах Беларуси.' }
   ];
   var r1i = 0;
   function g1() {
@@ -298,7 +304,7 @@
   g1();
 
   /* ---------- игра 2: складанка ---------- */
-  var WORDS = ['МИНСК', 'БУСЕЛ', 'ФЛАГ', 'БЕЛАРУСЬ', 'РОДИНА'], w2 = 0, pos = 0;
+  var WORDS = ['МИНСК', 'БОБР', 'ФЛАГ', 'БЕЛАРУСЬ', 'РОДИНА'], w2 = 0, pos = 0;
   function g2() {
     var w = WORDS[w2 % WORDS.length]; pos = 0;
     var slots = $('#g2s'), box = $('#g2o');
@@ -323,7 +329,7 @@
   var Q3 = [
     { q: 'Флаг Беларуси красно-зелёный, с орнаментом у древка.', a: true },
     { q: 'Столица Беларуси — Гомель.', a: false },
-    { q: 'Бусел (аист) — любимая птица белорусов.', a: true },
+    { q: 'Бобр строит плотины из веток.', a: true },
     { q: 'Беловежская пуща — дом зубра.', a: true },
     { q: 'Купалле — праздник зимы.', a: false }
   ];

@@ -51,27 +51,27 @@ a{color:var(--green)}
   linear-gradient(45deg,transparent 40%,var(--red) 40% 60%,transparent 60%) 0 0/22px 22px,
   var(--green);border-top:4px solid var(--red)}
 
-/* stork */
-.stork{overflow:visible;animation:float 3.6s ease-in-out infinite}
+/* beaver */
+.beaver{overflow:visible;animation:float 3.6s ease-in-out infinite}
 @keyframes float{50%{transform:translateY(-10px)}}
-.stork .eyes{transform-box:fill-box;transform-origin:center}
-.stork .blink{animation:blink 4.5s infinite;transform-box:fill-box;transform-origin:center}
+.beaver .eyes{transform-box:fill-box;transform-origin:center}
+.beaver .blink{animation:blink 4.5s infinite;transform-box:fill-box;transform-origin:center}
 @keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
-.stork .wL,.stork .wR{transition:transform .45s cubic-bezier(.3,1.6,.5,1)}
-.stork .wL{transform-origin:62px 132px}.stork .wR{transform-origin:138px 132px}
-.stork[data-emo=joy] .wL,.stork[data-emo=cheer] .wL{transform:rotate(50deg)}
-.stork[data-emo=joy] .wR,.stork[data-emo=cheer] .wR{transform:rotate(-50deg)}
-.stork[data-emo=wow] .wL{transform:rotate(28deg)}.stork[data-emo=wow] .wR{transform:rotate(-28deg)}
-.stork[data-emo=sad] .wL{transform:rotate(-8deg)}.stork[data-emo=sad] .wR{transform:rotate(8deg)}
-.stork[data-emo=think] .wR{transform:rotate(-70deg)}
-.stork[data-emo=wink] .wR{transform:rotate(-60deg)}
-.stork[data-emo=joy] .wL,.stork[data-emo=cheer] .wR{animation:flap .5s ease-in-out infinite alternate}
+.beaver .wL,.beaver .wR{transition:transform .45s cubic-bezier(.3,1.6,.5,1)}
+.beaver .wL{transform-origin:68px 130px}.beaver .wR{transform-origin:132px 130px}
+.beaver[data-emo=joy] .wL,.beaver[data-emo=cheer] .wL{transform:rotate(50deg)}
+.beaver[data-emo=joy] .wR,.beaver[data-emo=cheer] .wR{transform:rotate(-50deg)}
+.beaver[data-emo=wow] .wL{transform:rotate(28deg)}.beaver[data-emo=wow] .wR{transform:rotate(-28deg)}
+.beaver[data-emo=sad] .wL{transform:rotate(-8deg)}.beaver[data-emo=sad] .wR{transform:rotate(8deg)}
+.beaver[data-emo=think] .wR{transform:rotate(-70deg)}
+.beaver[data-emo=wink] .wR{transform:rotate(-60deg)}
+.beaver[data-emo=joy] .wL,.beaver[data-emo=cheer] .wR{animation:flap .5s ease-in-out infinite alternate}
 @keyframes flap{to{translate:0 -4px}}
-.stork[data-emo=hi] .wR{transform:rotate(-55deg);animation:wave .6s ease-in-out infinite alternate}
+.beaver[data-emo=hi] .wR{transform:rotate(-55deg);animation:wave .6s ease-in-out infinite alternate}
 @keyframes wave{to{rotate:-14deg}}
-.stork .extra{animation:pop .5s cubic-bezier(.3,1.8,.5,1)}
+.beaver .extra{animation:pop .5s cubic-bezier(.3,1.8,.5,1)}
 @keyframes pop{from{transform:scale(0);opacity:0}}
-.stork .extra{transform-box:fill-box;transform-origin:center}
+.beaver .extra{transform-box:fill-box;transform-origin:center}
 
 /* map */
 .mapbox{background:#fff;border-radius:28px;box-shadow:var(--shadow);padding:10px;border:2px solid var(--line);background-image:radial-gradient(#f3ead6 1.5px,transparent 1.5px);background-size:22px 22px}
